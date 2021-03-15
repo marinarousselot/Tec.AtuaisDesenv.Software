@@ -9,31 +9,38 @@
 <body>
 <p style="font-size: 20px; color:black">
 <?php
-$nome = "Marina Rousselot";
+$meuNome = "Marina Rousselot";
 $matricula = 37171;
-$nomeEmat = $nome.' '.$matricula;
+$nomeEmat = $meuNome.' '.$matricula;
 echo $nomeEmat;
 ?>
 </p>
 <hr>
 <?php
-for ($i = 1; $i <= 99; $i++) {
+$NomeContador = $_POST['nome'];
+$Contador = $_POST['quantidade'];
+$FazerContagemInterna = $_POST['ContInterno'];
+for ($i = 1; $i <= $Contador; $i++) {
 ?>
-<p style="font-family: calibri; font-size: 14px; color:black">Mariana conta <?= $i ?><br />
-Mariana conta <?= $i ?> 
+<p style="font-family: calibri; font-size: 14px; color:black"><?= $NomeContador ?> conta <?= $i ?><br />
 <?php
-for ($j = 1; $j <= $i; $j++) {
-?>
- é <?= $j ?>
-<?php 
-}
-?>
-,
-<br>
-Ana viva a Mariana viva a Mariana, <br /></p>
+if ($FazerContagemInterna == 'Sim')
+{
+    echo $NomeContador ?> conta <?= $i;
+    for ($j = 1; $j <= $i; $j++) {
+        ?>
+         é <?= $j ?>
+        <?php 
+        }
+        ?>
+        ,
+<?php } ?>
+    <br>
+Ana viva a <?= $NomeContador ?> viva a <?= $NomeContador ?>, <br /></p>
 <hr>
 <?php
 }
 ?>
+
 </body>
 </html>
